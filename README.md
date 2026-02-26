@@ -37,7 +37,7 @@ npm install
 cp .env.example .env
 ```
 
-Put your MongoDB URL in `backend/.env`:
+-> Put your MongoDB URL in `backend/.env`:
 
 ```env
 PORT=5000
