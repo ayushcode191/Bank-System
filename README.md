@@ -89,8 +89,8 @@ Create account:
 
 ```json
 {
-  "accountNo": "9876543210",
-  "holderName": "Rahul Sharma",
+  "accountNo": "9676543210",
+  "holderName": "Ayush Ji",
   "balance": 1000,
   "isKYCVerified": true
 }
@@ -100,7 +100,7 @@ Deposit:
 
 ```json
 {
-  "accountNo": "9876543210",
+  "accountNo": "9676543210",
   "amount": 500
 }
 ```
@@ -109,7 +109,7 @@ Withdraw:
 
 ```json
 {
-  "accountNo": "9876543210",
+  "accountNo": "9676543210",
   "amount": 200
 }
 ```
@@ -118,8 +118,8 @@ Transfer:
 
 ```json
 {
-  "senderAccount": "9876543210",
-  "receiverAccount": "8765432109",
+  "senderAccount": "9676543210",
+  "receiverAccount": "9876543210",
   "amount": 300
 }
 ```
@@ -134,52 +134,4 @@ Transfer:
   - sender and receiver must be different
   - sender must have sufficient balance
 
-## Interview Notes (Quick Explain)
 
-- Controller has reusable validators (`normalizeAccountNo`, `normalizeHolderName`, amount parsers).
-- All business-rule failures return structured API errors with proper status codes.
-- Money values are rounded to 2 decimals to avoid floating-point drift in repeated operations.
-- Frontend shows both toast notifications and an output panel for user feedback.
-
-## Deployment (Mandatory)
-
-You need **public live URLs**. Recommended simple combo:
-
-### Backend on Render
-
-1. Push repo to GitHub.
-2. Create new Web Service on Render from `backend` folder.
-3. Build command: `npm install`
-4. Start command: `npm start`
-5. Add env vars:
-   - `MONGO_URI`
-   - `CLIENT_URL` (your Vercel frontend URL)
-6. Copy deployed backend URL, e.g. `https://your-backend.onrender.com`
-
-### Frontend on Vercel
-
-1. Import repo in Vercel.
-2. Set root directory as `frontend`.
-3. Add env var:
-   - `VITE_API_URL=https://your-backend.onrender.com/api`
-4. Deploy and get live frontend URL.
-
-## Submission Checklist
-
-- GitHub Repository Link: Yes
-- Live Deployment URL: Yes
-- README.md: Yes
-- 2-minute Demo Video: Record after deployment
-- Minimum 3 commits: Do at least these commits:
-  1. `feat: setup backend APIs and validation`
-  2. `feat: add React UI screens and output panel`
-  3. `docs: add README and deployment steps`
-
-## Notes for Review Criteria
-
-- Functionality: All mandatory features included
-- Logic: Transfer validations implemented
-- UI: All required screens included
-- Code Quality: Modular backend/frontend structure
-- Error Handling: Invalid input and validation errors handled
-- Explanation: This README + API structure is interview-friendly
